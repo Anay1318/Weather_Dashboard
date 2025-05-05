@@ -1,0 +1,200 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #e0f7fa; /* Light cyan for better contrast */
+  transition: background 500ms ease;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: flex-start; /* Align content from the top */
+  padding-top: 2rem; /* Add some top padding for spacing */
+}
+
+.app-container {
+  max-width: 1200px;
+  width: 95%; /* Adjust width for better responsiveness */
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem; /* Increased margin */
+}
+
+h1 {
+  font-size: 2.8rem; /* Slightly larger */
+  margin-bottom: 0.75rem;
+  color: #fff; /* Pure white for heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 1.1rem;
+  color: #b0bec5; /* Light grey-blue */
+}
+
+/* Card Styles */
+.card {
+  background-color: rgba(255, 255, 255, 0.15); /* Slightly less opaque */
+  backdrop-filter: blur(12px); /* Slightly stronger blur */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible border */
+  border-radius: 0.75rem;
+  padding: 1.75rem; /* Increased padding */
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  transition: transform 0.2s ease-in-out; /* Add subtle hover effect */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  max-width: 550px; /* Slightly wider */
+  margin: 0 auto 2.5rem auto; /* Increased margin */
+  gap: 0.75rem;
+}
+
+input {
+  flex-grow: 1;
+  padding: 0.85rem 1.1rem; /* Slightly larger padding */
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Add a subtle border */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.05rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #64b5f6; /* Accent color on focus */
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Slightly less transparent */
+}
+
+button {
+  background-color: #64b5f6; /* Accent color for button */
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.85rem 1.75rem; /* Slightly larger padding */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #42a5f5; /* Darker shade on hover */
+}
+
+button:active {
+  transform: scale(0.98); /* Subtle press effect */
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.4); /* Slightly more visible */
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 45px; /* Slightly larger */
+  height: 45px; /* Slightly larger */
+  animation: spin 1.1s linear infinite; /* Slightly slower */
+  margin-bottom: 1.25rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Weather Container */
+#weather-output {
+  /* Inherits card styles */
+  text-align: center;
+}
+
+#city-name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+#description {
+  font-size: 1.15rem;
+  color: #b0bec5;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+#weather-output p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+#weather-output strong {
+  font-weight: 600;
+  color: #e0f7fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2.2rem;
+  }
+
+  .subtitle {
+      font-size: 1rem;
+  }
+
+  .search-container {
+      flex-direction: column;
+      max-width: 90%;
+  }
+
+  input,
+  button {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+  }
+
+  .card {
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+  }
+
+  #city-name {
+      font-size: 1.75rem;
+  }
+
+  #description {
+      font-size: 1.1rem;
+  }
+
+  #weather-output p {
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+  }
+}
